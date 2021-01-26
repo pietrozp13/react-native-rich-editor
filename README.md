@@ -1,5 +1,7 @@
 # React Native Rich Text Editor
 
+! Specific change to generate a image from the html and return the base64 on "onChange" callback
+
 
 [![NPM](https://img.shields.io/npm/v/react-native-pell-rich-editor.svg)](https://www.npmjs.com/package/react-native-pell-rich-editor)
 
