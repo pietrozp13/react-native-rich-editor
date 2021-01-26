@@ -6,6 +6,8 @@ import {createHTML} from './editor';
 
 const PlatformIOS = Platform.OS === 'ios';
 
+import lib from './external-lib'
+
 export default class RichTextEditor extends Component {
     // static propTypes = {
     //     initialContentHTML: PropTypes.string,
@@ -257,6 +259,7 @@ export default class RichTextEditor extends Component {
                     source={viewHTML}
                     opacity={opacity}
                     onLoad={that.init}
+                    injectedJavaScript={lib}
                 />
                 {Platform.OS === 'android' && <TextInput ref={(ref) => (that._input = ref)} style={styles._input} />}
             </>

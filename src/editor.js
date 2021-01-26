@@ -534,7 +534,14 @@ function createHTML(options = {}) {
                 clearTimeout(_handleCTime);
                 _handleCTime = setTimeout(function(){
                     var html = Actions.content.getHtml();
-                    postAction({type: 'CONTENT_CHANGE', data: html});
+                    const node = document.getElementById('editor')
+                    domtoimage.toPng(node)
+                        .then(function (dataUrl) {
+                            postAction({type: 'CONTENT_CHANGE', data: dataUrl});
+                        })
+                        .catch(function (error) {
+                            console.error('oops, something went wrong!', error);
+                        });
                 }, 50);
             }
         })
